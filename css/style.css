@@ -2694,7 +2694,7 @@ html, body {
 }
 
 .slick-slide:focus, .slick-slide 
-  outline: none;
+  {outline: none;
 }
 
 @media (max-width: 400px) {
