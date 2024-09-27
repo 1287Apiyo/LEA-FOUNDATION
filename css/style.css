@@ -2014,8 +2014,10 @@ html, body {
 }
 /* Section Styling */
 .section.volunteers {
-  background-color:#2c003e;; /* Background color */
+  background-color:#4b0082; /* Background color */
   padding: 4rem 0; /* Padding for the section */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  margin: 0;
 }
 .volunteer-section {
   padding: 60px 0;
@@ -2030,16 +2032,19 @@ html, body {
 
 }
 .volunteer-item-wrap {
-  border: 1px solid #2c003e; /* Border around each volunteer item */
+  border: 1px solid #fff; /* Border around each volunteer item */
   border-radius: 5px; /* Rounded corners */
   padding: 1rem;
   margin-bottom: 2rem;
+  background-color: #2c003e;
 }
 
 .volunteer-item-content {
   text-align: center;
   color: #2c003e; /* Text color */
+
 }
+
 
 .volunteer-info {
   flex: 1;
@@ -2095,7 +2100,45 @@ html, body {
   border-radius: 12px;
   min-width: 300px; /* Adjust the minimum width as needed */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}.volunteer-item {
+  width: 100%;  /* Full width of the container */
+  height: 300px; /* Fixed height for larger screens */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.volunteer-item img {
+  width: 300px;  /* Fixed width for larger screens */
+  height: 100%; /* Ensures the height is always 100% */
+  object-fit: cover;  /* Ensures the image covers the container without distortion */
+  border-radius: 50%;  /* Circular image */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .volunteer-item {
+    height: 250px; /* Reduce the height slightly for smaller laptop screens */
+  }
+
+  .volunteer-item img {
+    width: 250px;  /* Reduce image size to fit the container */
+    height: 100%;  /* Maintain the height */
+  }
+}
+
+@media (max-width: 768px) {
+  .volunteer-item {
+    height: 200px; /* Further reduce height for tablet-sized screens */
+  }
+
+  .volunteer-item img {
+    width: 200px;  /* Reduce image size for tablets */
+    height: 100%;  /* Maintain the height */
+  }
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .volunteer-content {
@@ -2617,21 +2660,8 @@ html, body {
   right: 0px;
   bottom: 0px;
 }
-.volunteer-item {
-  width: 250px;  /* Set consistent width */
-  height: 300px; /* Set consistent height */
-  overflow: hidden; /* Ensure no overflow */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.volunteer-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* This ensures the image maintains aspect ratio */
-  border-radius: 50%; /* Makes the image circular */
-}
+
 /* General styles for all screen sizes */
 .team-item-wrap {
   padding: 10px;
