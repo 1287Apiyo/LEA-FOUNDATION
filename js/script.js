@@ -465,3 +465,27 @@ setInterval(updateSliderContent, 5000); // Change message every 5 seconds
 
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const introItems = document.querySelectorAll('.intro-item');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the item is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, observerOptions);
+
+    introItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+

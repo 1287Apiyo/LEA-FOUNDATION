@@ -816,6 +816,8 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 .no-spacing {
   letter-spacing: 0px;
 }
+
+
 /* Intro Section Styling */
 .intro-section {
   padding: 60px 20px;
@@ -1743,7 +1745,7 @@ ul.list-styled {
 
 /* Subtitle styling */
 .sub-title {
-  font-size: 1.8rem; /* Adjust font size */
+  font-size: 1.3rem; /* Adjust font size */
   font-weight: bold; /* Bold text */
   letter-spacing: 1.5px; /* Letter spacing */
   color: #fff; /* Subtle gold color */
@@ -1755,6 +1757,7 @@ ul.list-styled {
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
   font-family: 'Roboto', sans-serif; /* Font family */
   padding: 5px 0; /* Padding */
+  text-transform:uppercase;
 }
 
 /* Show the subtitles in sequence with unique animations */
@@ -3382,36 +3385,141 @@ body {
   color:white;
   line-height: 1.8;
 }
-/* Initial styles for .intro-item */
-.intro-item {
-  display: flex;
-  flex-direction: column;
-  background-color: #E6E6FA;
-  padding: 20px;
-  height: auto; /* Adjust if necessary */
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+/*styling for the 2nd part of index.html*/
+.intro {
   position: relative;
-  opacity: 1; /* Initially visible */
-  transform: translateX(300px); /* Start position for sliding effect */
-  transition: transform 0.9s ease-in-out, opacity 0.9s ease-in-out;
-  margin-bottom: 20px; /* Ensure spacing between items */
+  overflow: hidden;
 }
 
+/* Background Styling */
+.intro-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4a00e0, #8e2de2);
+  filter: blur(10px);
+  z-index: -1;
+}
 
+/* Overlay for Darker Tint */
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
 
+/* Content Styling */
+.intro-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
 
-/* Animation for sliding in */
+.icon-container {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: iconAnimation 1.5s ease-in-out infinite alternate;
+}
+
+.headline {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: slideInUp 1s forwards;
+}
+
+.subheadline {
+  font-size: 1.25rem;
+  animation: slideInUp 1.2s forwards;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+  justify-items: center; /* Center items in their grid cells */
+}
+
+/* Intro Item Styling */
+.intro-item {
+  background-color: #E6E6FA;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlide 0.8s forwards; /* Fade and slide effect */
+  padding: 20px; /* Added padding for better text spacing */
+  text-align: left; /* Align text to the left for better readability */
+  transition: transform 0.3s ease;
+}
+
+.intro-item img {
+  width: 100%;
+  height: auto; /* Keep aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+.intro-item:hover img {
+  transform: scale(1.05);
+}
+
+.intro-item h4 {
+  margin: 15px 0 10px; /* Spacing around headings */
+  font-size: 1.5rem;
+}
+
+.intro-item p {
+  font-size: 1rem; /* Adjusted for readability */
+  line-height: 1.5; /* Increased line height for better text spacing */
+}
+
+/* Animation delays for staggered entrance */
+.item1 { animation-delay: 0.2s; }
+.item2 { animation-delay: 0.4s; }
+.item3 { animation-delay: 0.6s; }
+.item4 { animation-delay: 0.8s; }
+
+/* Keyframes for animations */
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateX(300px); /* Customize start position */
+      opacity: 0;
+      transform: translateY(30px);
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
+
+@keyframes iconAnimation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+      opacity: 0;
+      transform: translateY(50px); /* Slide in from below */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
 
 /* Apply animation with delay to each item */
 .intro-item.visible {
@@ -3511,18 +3619,7 @@ body {
     font-size: 10px;
   }
 }/* Container Styling */
-.intro-container {
-  position: relative;
-  overflow: hidden;
-  padding: 40px 15px;
-  margin-right: 3px;
-  margin-left: 3px;
-  margin-bottom: 60px;
-  background: #000; /* Dark background for a modern feel */
-  color: #fff; /* Light text color for contrast */
-  border-radius: 1px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-}
+
 .icon-container {
   font-size: 3rem; /* Adjust size as needed */
   color: #FF673AB7; /* Color for icons */
@@ -3533,38 +3630,6 @@ body {
 }
 
 
-/* Background Styling */
-.intro-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #4a00e0, #8e2de2); /* Gradient background */
-  filter: blur(8px);
-  z-index: -1;
-}
-
-/* Overlay for Darker Tint */
-.intro-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Dark overlay for better text contrast */
-}
-
-/* Content Styling */
-.intro-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; /* Space between visual and text */
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-}
 
 /* Visual Box */
 .intro-visual {
@@ -3588,12 +3653,15 @@ body {
 .visual-box:hover {
   transform: scale(1.1); /* Slight zoom effect on hover */
 }
-
+.intro {
+  position: relative;
+  overflow: hidden;
+}
 /* Intro Text Styling */
+
 .intro-text {
   padding: 20px;
   text-align: center;
-  background: #000; /* Background color */
   color: #ffffff; /* Text color */
   margin: 0 auto;
   max-width: 100%; /* Ensure the container doesn't exceed screen width */
