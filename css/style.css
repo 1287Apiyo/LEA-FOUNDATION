@@ -1696,7 +1696,6 @@ ul.list-styled {
     background-image: url("../images/LEA pics/LEA-11.jpg");
   }
 }
-
 /* Main title styling */
 .main-title {
   font-size: 4rem;
@@ -1760,17 +1759,17 @@ ul.list-styled {
 
 /* Show the subtitles in sequence with unique animations */
 .sub-title:nth-child(1) {
-  animation: fadeInSlideIn 24s forwards; /* First subtitle appears */
+  animation: fadeInSlideIn 24s infinite; /* First subtitle appears */
   animation-delay: 0s; /* Starts immediately */
 }
 
 .sub-title:nth-child(2) {
-  animation: fadeInSlideIn 24s forwards; /* Second subtitle appears */
+  animation: fadeInSlideIn 24s infinite; /* Second subtitle appears */
   animation-delay: 8s; /* Starts after the first has fully disappeared */
 }
 
 .sub-title:nth-child(3) {
-  animation: fadeInSlideIn 24s forwards; /* Third subtitle appears */
+  animation: fadeInSlideIn 24s infinite; /* Third subtitle appears */
   animation-delay: 16s; /* Starts after the second has fully disappeared */
 }
 
@@ -1804,6 +1803,7 @@ ul.list-styled {
     font-size: 1.2rem; /* Smaller subtitles on mobile */
   }
 }
+
 
 .mb-51{
   color:white;
