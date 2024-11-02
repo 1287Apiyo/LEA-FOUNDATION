@@ -437,6 +437,31 @@ document.getElementById('events-timeline').addEventListener('scroll', function()
   }
 });
 
+const messages = [
+    { title: "LEA FOUNDATION", description: "Coding Dreams Into Reality" },
+    { title: "Empowering Youth", description: "Opening Doors to Technology" },
+    { title: "Building Future Leaders", description: "Nurturing Talent and Skills" },
+];
+
+let currentIndex = 0;
+const images = document.querySelectorAll(".image");
+const titles = document.querySelectorAll(".title");
+const descriptions = document.querySelectorAll(".description");
+const imageContainer = document.querySelector(".image-container");
+
+function updateSliderContent() {
+    images.forEach((image, index) => {
+        image.style.opacity = index === currentIndex ? '1' : '0'; // Show current image
+        titles[index].textContent = messages[index].title; // Update titles
+        descriptions[index].textContent = messages[index].description; // Update descriptions
+    });
+    
+    // Update transform for sliding effect
+    imageContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    currentIndex = (currentIndex + 1) % messages.length; // Loop through messages
+}
+
+setInterval(updateSliderContent, 5000); // Change message every 5 seconds
 
 
 
