@@ -355,52 +355,45 @@
 	</div>
 </section>
 <!-- Section About Start -->
-<section class="recent-projects-section">
-    <div class="container">
-        <div class="section-header">
-            <div class="title-box">
-                <div class="section-title">
-                    <span class="highlight-text">Latest Events</span>
-                    <h2 class="main-title">Our Recent Projects</h2>
-                </div>
-            </div>
-        </div>
-    
-        <div class="projects-columns">
-            <div class="project-item">
-                <img src="images/LEA pics/LEAF-9.jpg" class="project-image" alt="Fun at Event">
-                <div class="project-description">
-                    <h3 class="project-title">Immersion and Inclusivity</h3>
-                    <p class="project-text">In our first project, we connected with learners at MSDP who were new to computers. We began by introducing them to the basics, ensuring they felt comfortable and confident before advancing to more complex skills. This foundational support set the stage for their future growth in technology.</p>
-                </div>
-            </div>
-			<div class="project-item">
-				<img src="images/LEA pics/LEA-3.jpg" class="project-image" alt="Awareness and Exposure">
-				<div class="project-description">
-					<h3 class="project-title">Awareness and Exposure</h3>
-					<p class="project-text">This project focuses on exposing learners to the vast world of technology. Through workshops and events, we aim to inspire curiosity and provide insights into various tech fields. Your support will help broaden their horizons and ignite a passion for learners. We ensure they gain valuable perspectives and motivation</p>
-				</div>
-			</div>
-			
-			<div class="project-item">
-                <img src="images/LEA pics/LEA-2.jpg" class="project-image" alt="Laptop Initiative">
-                <div class="project-description">
-                    <h3 class="project-title">Laptop Initiative For Learners</h3>
-                    <p class="project-text">Our current project focuses on sourcing laptops for our learners. While our dedicated tutors provide laptops, we are actively seeking additional funding to ensure every student has access to the tools they need. Your support can help us bridge the digital divide and enhance learning opportunities for all.</p>
-                </div>
-            </div>
 
-			<div class="project-item">
-                <img src="images/LEA pics/LEA-28.jpg" class="project-image" alt="Build Websites">
-                <div class="project-description">
-                    <h3 class="project-title">Build Websites</h3>
-                    <p class="project-text">Once our learners were comfortable with basic computer skills, we guided them in creating their own simple websites. Each group designed a site related to their courses, applying their newfound skills in a practical and creative way. .</p>
-                </div>
+<div class="partner-container">
+    <div class="section-header">
+        <div class="title-box">
+            <div class="section-title">
+                <span class="highlight-text">Our Partners</span>
+                <h2 class="main-title">Together We Make a Difference</h2>
             </div>
         </div>
     </div>
+    <div class="partners-list">
+        <div class="partner-item">
+            <img src="images/msdp_logo.png" alt="Partner 1" class="partner-logo">
         </div>
+        <div class="partner-item">
+            <img src="images/tukkklogo.png" alt="Partner 2" class="partner-logo">
+        </div>
+        <div class="partner-item">
+            <img src="images/rai.JPG" alt="Partner 3" class="partner-logo">
+        </div>
+        <!-- Duplicated items for seamless scrolling -->
+        <div class="partner-item">
+            <img src="images/msdp_logo.png" alt="Partner 1" class="partner-logo">
+        </div>
+        <div class="partner-item">
+            <img src="images/tukkklogo.png" alt="Partner 2" class="partner-logo">
+        </div>
+        <div class="partner-item">
+            <img src="images/rai.JPG" alt="Partner 3" class="partner-logo">
+        </div>
+		
     </div>
+</div>
+
+
+<section class="recent-projects-section">
+   
+
+
 
 	
 	<section id="empowerment-steps" class="section empowerment-steps">
@@ -637,8 +630,29 @@
 		  });
 		});
 	  </script>
-	  
+	
+	
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const partnersList = document.querySelector(".partners-list");
+  let scrollAmount = 0;
+  const scrollSpeed = 2; // Adjust for speed
+
+  function scrollPartners() {
+    scrollAmount -= scrollSpeed;
+    if (Math.abs(scrollAmount) >= partnersList.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+    partnersList.style.transform = `translateX(${scrollAmount}px)`;
+    requestAnimationFrame(scrollPartners);
+  }
+
+  scrollPartners();
+});
+
+	</script>
   </body>
   
   </html>

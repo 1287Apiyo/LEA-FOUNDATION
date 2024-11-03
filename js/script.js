@@ -522,3 +522,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const partnerItems = document.querySelectorAll('.partner-item');
+
+        const options = {
+            root: null, // Use the viewport as the root
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Add visible class to trigger animation
+                    observer.unobserve(entry.target); // Stop observing after it becomes visible
+                }
+            });
+        }, options);
+
+        partnerItems.forEach(item => {
+            observer.observe(item); // Observe each partner item
+        });
+    });
+
+
