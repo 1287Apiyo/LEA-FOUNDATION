@@ -1806,7 +1806,7 @@ ul.list-styled {
     font-size: 1.2rem; /* Smaller subtitles on mobile */
   }
 }
-
+/*end of slider section of index.html*/
 
 .mb-51{
   color:white;
@@ -2678,7 +2678,7 @@ ul.list-styled {
 }
 
 .team-item img {
-  border-radius: 10px;
+  border-radius: 100%;
   width: 100%;
   height: auto;
 }
@@ -2689,7 +2689,7 @@ ul.list-styled {
 }
 
 .team-item-content p {
-  color: #666;
+  color: #fff;
   font-size: 1rem;
 }
 
@@ -2837,239 +2837,160 @@ ul.list-styled {
   }
 }
 /* Gallery Section Styling */
-.gallery {
-  width: 100%;
-  padding: 20px 0;
-  box-sizing: border-box;
-  overflow: hidden; /* Prevents overflow for animations */
+.section.gallery {
+  padding: 60px 0;
+  background-color: #2c003e;
 }
-
-.gallery .section-title {
-  margin-bottom: 60px;
+.gallery-section-title {
   text-align: center;
-  color: white;
-  max-width: 100%;
-  margin: 0 auto 60px auto;
   padding: 20px;
-  background: white;
-  border-radius: 4px;
-  box-sizing: border-box;
-  animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
-}
-
-.gallery .section-title .text-color {
-  color: #f89d35;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.gallery .section-title .content-title {
-  font-size: 1.0rem; /* Increased font size */
-  font-weight: 700;
-  color: black; /* Change title text color to white */
+  background-color: #fff; /* Background color */
+  color: black; /* Text color */
+  border-radius: 8px; /* Rounded corners */
   position: relative;
-  display: inline-block;
-  padding-bottom: 15px;
-  letter-spacing: 2px; /* Add letter spacing for a modern look */
+  display: inline-block; /* Fits content width */
+  margin: 0 auto 60px auto; /* Centered with margin */
+  transition: transform 0.3s ease; /* Smooth scaling */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-.gallery .section-title .content-title::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 0;
-  height: 6px;
-  background: #f89d35;
-  border-radius: 8px;
-  transition: width 0.6s ease-in-out;
-}
-
-.gallery .section-title:hover .content-title::after {
-  width: 100%;
-}
-
-/* Gallery Grid Styling */
-/* Gallery Grid Styling */
-
-
-/* Fade-in and Slide-up Effect */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Magnetic Pull Effect */
-.gallery-item {
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  will-change: transform, box-shadow;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05) translate(5px, -5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-/* Dynamic Lighting Effect - Adjusted */
-.gallery-item::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.gallery-item:hover::before {
-  /* Keeping the effect subtle without scaling */
-  opacity: 0.3;
-  transform: none; /* Remove scaling to avoid blurriness */
-}
-
-/* Parallax Hover Effect */
-.gallery-item img {
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05) translateY(-5px); /* Adjusted to avoid excessive blurriness */
-}
-
-/* Fluid Item Expansion */
-.gallery-item::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  color: white;
-  font-size: 1.2rem;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateY(20px);
-}
-
-.gallery-item:hover::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Organic Hover Shape */
-.gallery-item {
-  border-radius: 5px;
-  transition: transform 0.5s ease, border-radius 0.5s ease;
-}
-
-.gallery-item:hover {
-  border-radius: 10px;
-  transform: scale(1.05) skew(1deg, 1deg);
-}
-
-/* Interactive Shadows */
-.gallery-item {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.gallery-item:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.gallery-item::after {
-  content: "";
+/* Pseudo-element for transparent background */
+.gallery-section-title::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 157, 53, 0.1); /* Adjusted to a lighter transparent color */
+  border-radius: 8px; /* Match rounded corners */
+  z-index: -1; /* Place behind the title */
+}
+
+.gallery-section-title:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.gallery-section-title .text-color {
+  display: block; /* Ensures it takes full width */
+  font-size: 1.2rem; /* Font size for the title */
+  text-transform: uppercase; /* Uppercase styling */
+  margin-bottom: 5px; /* Spacing below */
+  color: #f89d35; /* Text color */
+  font-weight: bold; /* Bold text */
+}
+
+.gallery-section-title .content-title {
+  font-size: 1rem; /* Font size for subtitle */
+  color: black; /* Color for subtitle */
+  margin: 0; /* No margin */
+  position: relative; /* Position for pseudo-element */
+}
+
+.gallery-section-title .content-title::after {
+  content: "";
+  display: block;
+  width: 0; /* Initial width for the line */
+  height: 3px; /* Height of the line */
+  background: #f89d35; /* Line color */
+  margin-top: 10px; /* Spacing above line */
+  transition: width 0.3s ease; /* Smooth transition for line width */
+}
+
+.gallery-section-title:hover .content-title::after {
+  width: 100%; /* Line expands on hover */
+}
+
+.section-title .text-color {
+  color: #fff; /* Adjust color to suit theme */
+}
+
+/* Gallery Wrapper: Masonry Layout */
+.gallery-wrap {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Animation on Scroll */
+.gallery-item {
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Start slightly lower */
+  animation: slideInUp 0.5s forwards; /* Animation effect */
+}
+
+/* Keyframes for the slide animation */
+@keyframes slideInUp {
+  to {
+    opacity: 1; /* End state is visible */
+    transform: translateY(0); /* End state is in place */
+  }
+}
+
+/* Add a delay based on the order of the items */
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Image Styling */
+.gallery-item img {
   width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
-.gallery-item:hover::after {
-  opacity: 1;
-  transform: none; /* No scaling */
+/* Hover Effect */
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-/* Section Divider Styling */
-.section-divider {
-  height: 10px;
-  border-radius: 4px;
-  margin: 100px 0;
-  position: relative;
+/* Gallery Wrapper: Responsive Grid */
+.gallery-wrap {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Default for desktop */
 }
 
-.section-divider::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 4px;
-}
-
-/* Responsive Enhancements for Gallery Section */
+/* Responsive Columns */
 @media (max-width: 768px) {
-  .gallery-wrap .columns {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .gallery-wrap .column {
-    flex: 0 0 50%; /* Each column takes up 50% of the row */
-    max-width: 50%; /* Ensures two columns per row */
-    padding: 10px; /* Adjust padding for spacing between images */
+  .gallery-wrap {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
   }
 }
 
-@media (max-width: 480px) {
-  .gallery-wrap .columns {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .gallery-wrap .column {
-    flex: 0 0 50%; /* Each column takes up 50% of the row */
-    max-width: 50%; /* Ensures two columns per row */
-    padding: 5px; /* Adjust padding for tighter spacing */
+@media (max-width: 576px) {
+  .gallery-wrap {
+    grid-template-columns: 1fr; /* One column for phones */
   }
 }
 
-
-/* Keyframe Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* View Full Gallery Button */
+.view-full-gallery {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #FF673AB7;
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.view-full-gallery:hover {
+  color: #673ab7;
 }
+
+
 /*contact page*/
 
 /* General Styles */
@@ -3385,6 +3306,7 @@ body {
   color:white;
   line-height: 1.8;
 }
+
 /*styling for the 2nd part of index.html*/
 .intro {
   position: relative;
@@ -3422,11 +3344,7 @@ body {
   padding: 4rem 2rem;
 }
 
-.icon-container {
-  font-size: 60px;
-  margin-bottom: 20px;
-  animation: iconAnimation 1.5s ease-in-out infinite alternate;
-}
+
 
 .headline {
   font-size: 2.5rem;
@@ -3439,32 +3357,45 @@ body {
   animation: slideInUp 1.2s forwards;
 }
 
+/* Container Styling */
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 40px;
-  margin-top: 30px;
-  justify-items: center; /* Center items in their grid cells */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Intro Item Styling */
+/* General styling */
 .intro-item {
   background-color: #E6E6FA;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  position: relative;
+  padding: 20px;
+  text-align: left;
+  width: 400px; /* Increased width */
+  height: 450px; /* Increased height */
+  max-width: 100%;
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeSlide 0.8s forwards; /* Fade and slide effect */
-  padding: 20px; /* Added padding for better text spacing */
-  text-align: left; /* Align text to the left for better readability */
+  animation: flipIn 0.8s forwards; /* New animation */
   transition: transform 0.3s ease;
+}
+
+/* Flip animation */
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
 }
 
 .intro-item img {
   width: 100%;
-  height: auto; /* Keep aspect ratio */
+  height: auto;
   transition: transform 0.3s ease;
 }
 
@@ -3473,13 +3404,13 @@ body {
 }
 
 .intro-item h4 {
-  margin: 15px 0 10px; /* Spacing around headings */
-  font-size: 1.5rem;
+  margin: 15px 0 10px;
+  font-size: 1.7rem;
 }
 
 .intro-item p {
-  font-size: 1rem; /* Adjusted for readability */
-  line-height: 1.5; /* Increased line height for better text spacing */
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* Animation delays for staggered entrance */
@@ -3487,6 +3418,15 @@ body {
 .item2 { animation-delay: 0.4s; }
 .item3 { animation-delay: 0.6s; }
 .item4 { animation-delay: 0.8s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .intro-item {
+    width: 90%; /* Full width on smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+  }
+}
+
 
 /* Keyframes for animations */
 @keyframes slideIn {
@@ -3519,7 +3459,7 @@ body {
       transform: translateY(0);
   }
 }
-
+/*end of the 2nd part of index.html*/
 
 /* Apply animation with delay to each item */
 .intro-item.visible {
@@ -3618,10 +3558,11 @@ body {
   .intro-item p {
     font-size: 10px;
   }
-}/* Container Styling */
+}
+/* Container Styling */
 
 .icon-container {
-  font-size: 3rem; /* Adjust size as needed */
+  font-size: 2.5rem; /* Adjust size as needed */
   color: #FF673AB7; /* Color for icons */
   display: flex;
   align-items: center;

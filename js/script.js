@@ -488,4 +488,37 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(item);
     });
 });
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show'); // Apply a class to trigger the animation
+    }
+  });
+}, { threshold: 0.1 });
+
+galleryItems.forEach(item => {
+  observer.observe(item);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    function checkScroll() {
+        const triggerBottom = window.innerHeight / 5 * 4; // Adjust this for earlier/later reveal
+
+        galleryItems.forEach(item => {
+            const itemTop = item.getBoundingClientRect().top;
+
+            if (itemTop < triggerBottom) {
+                item.classList.add('visible'); // Add the visible class to trigger the animation
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Call it once to show items if already scrolled down
+});
+
 
