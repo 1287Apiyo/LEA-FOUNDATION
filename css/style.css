@@ -2195,8 +2195,15 @@ ul.list-styled {
   display: block;
   margin: 20px auto;
   padding: 15px 35px;
+  border: none;
   border-radius: 16px;
   font-size: 20px;
+}
+
+.volunteer-benefits button:hover {
+  background-color: #000000;
+  color: #f89d35;
+
 }
 
 .benefits-title {
