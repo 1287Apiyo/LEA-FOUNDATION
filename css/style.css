@@ -330,7 +330,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   margin-bottom: 20px;
   font-size: 2.5rem;
 }
-/* Title box with animated background effect */
 .title-box {
   position: relative;
   display: inline-block;
@@ -346,7 +345,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   z-index: 1;
   border: 0px solid rgba(255, 255, 255, 0.1);
 }
-
 
 /* Animated border effect */
 .title-box::before {
@@ -2142,6 +2140,9 @@ ul.list-styled {
 .volunteer-benefits {
   margin-top: 30px;
 }
+.volunteer-benefits button {
+  background-color: #F89D35;
+}
 
 .benefits-title {
   font-size: 20px;
@@ -2155,6 +2156,25 @@ ul.list-styled {
 }
 
 .benefits-list li {
+  margin-bottom: 10px;
+}
+
+.volunteer-qualifications {
+  margin-top: 30px;
+}
+
+.qualifications-title {
+  font-size: 20px;
+  color: #f89d35; /* Accent color */
+  margin-bottom: 15px;
+}
+
+.qualifications-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.qualifications-list li {
   margin-bottom: 10px;
 }
 
@@ -2267,6 +2287,12 @@ ul.list-styled {
 }
 
 .benefits-list strong {
+  color: white;
+  text-transform: capitalize;
+  font-weight: bolder;
+  font-size: large;
+}
+.qualifications-list strong {
   color: white;
   text-transform: capitalize;
   font-weight: bolder;
