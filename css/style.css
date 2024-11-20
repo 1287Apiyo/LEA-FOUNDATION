@@ -65,6 +65,7 @@ h6,
 p {
   color: #fff;
 }
+
 /*logo*/
 .lea-logo {
   width: 100px; /* Increase this value to enlarge the logo */
@@ -2203,7 +2204,6 @@ ul.list-styled {
 .volunteer-benefits button:hover {
   background-color: #000000;
   color: #f89d35;
-
 }
 
 .benefits-title {
