@@ -177,7 +177,7 @@
 
             <div class="additional-images">
                 <h5>Additional Visuals from This Experience</h5>
-                <div class="carousel-container">
+                <div class="carousel-container-hackathon">
                     <div class="carousel-images">
                         <img src="images/LEA PICS/hack15.jpg" alt="Hackathon Image 1" class="unique-image-src">
                         <img src="images/LEA PICS/hack3.jpg" alt="Hackathon Image 2" class="unique-image-src">
@@ -316,10 +316,21 @@
     max-width: 1000px; /* Increased max-width */
     height: 300px; /* Increased height */
     margin: 0 auto; /* Center container horizontally */
+    margin-bottom: 5px;
+    position: relative;
+}
+.carousel-container-hackathon {
+    overflow: hidden;
+    background-color: black;
+    width: 100%; /* Full width */
+    max-width: 1000px; /* Increased max-width */
+    height: 330px; /* Increased height */
+    margin: 0 auto; /* Center container horizontally */
+    margin-bottom: 5px;
     position: relative;
 }
 
-    .image-carousel {
+.image-carousel {
     position: relative;
     width: 100%; /* Full width for the carousel */
     overflow: hidden; /* Hide overflow to manage slide view */
@@ -327,7 +338,7 @@
 
 .carousel-images {
     display: flex;
-    
+    padding: 5px 10px;
     transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
     width: 100%; /* Full width of the container */
 }
