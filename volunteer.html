@@ -32,6 +32,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Icon Font Css -->
     <link rel="stylesheet" href="plugins/themify/css/themify-icons.css" />
     <link rel="stylesheet" href="plugins/icofont/icofont.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <link
       rel="stylesheet"
       href="plugins/magnific-popup/dist/magnific-popup.css"
@@ -47,6 +50,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+      /* Styling social media icon links for the volunteers */
+      .volunteer-img-hover {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: #ffffff99; */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease-in-out;
+        transform: scale(0.8);
+      }
+
+      .volunteer-img-hover li a {
+        display: inline-block;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+        border-radius: 100%;
+        text-align: center;
+        transform: translateY(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+      }
+
+      .volunteer-img-hover:hover li a:hover {
+        transform: translateY(4px);
+      }
+
+      .volunteer-item:hover .volunteer-img-hover {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+      }
+
+    </style>
   </head>
 
   <body>
@@ -145,10 +201,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="volunteer-item-wrap">
             <div class="volunteer-item is-relative">
                 <img src="images/volunteers/Calvince.jpg" alt="Volunteer 1">
+                <div class="volunteer-img-hover">
+                  <ul class="volunteer-social list-inline">
+                    <li class="list-inline-item">
+                      <a href="https://www.instagram.com/white_shadow.photography?igsh=MXF6YzhpenY5ZTQ3Mg%3D%3D&utm_source=qr" class="instagram" target="_blank"><i class="icofont-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="https://www.tiktok.com/@white_shadow.photography?_t=8r6sfUZzhlm&_r=1" class="tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    </li>
+                  </ul>
+                </div>
             </div>
             <div class="volunteer-item-content">
                 <h4 class="mt-3 mb-0 is-capitalize">Calvince Obuya</h4>
-                <p>Web Developer, Photographer</p>
+                <p>Web Developer, Photographer</p>  
             </div>
         </div>
     </div>
@@ -442,6 +508,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
       </div>
     </div>
+
+    <div class="column is-3-desktop is-6-tablet">
+      <div class="volunteer-item-wrap">
+          <div class="volunteer-item is-relative">
+              <img src="images/volunteers/Rashid Isaak.jpg" alt="Volunteer 24" >
+          </div>
+          <div class="volunteer-item-content">
+              <h4 class="mt-3 mb-0 is-capitalize">Rashid Isaak</h4>
+              <p>Student</p>
+          </div>
+      </div>
+    </div>    
     
 		</div>
 	</div>

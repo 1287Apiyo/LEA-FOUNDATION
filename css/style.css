@@ -2765,6 +2765,14 @@ ul.list-styled {
   background: #3399cc;
 }
 
+.volunteer-img-hover .volunteer-social li a.instagram {
+  background: #cc66cc;
+}
+
+.volunteer-img-hover .volunteer-social li a.tiktok {
+  background: #27F6EB;
+}
+
 .team-img-hover {
   position: absolute;
   top: 10px;
